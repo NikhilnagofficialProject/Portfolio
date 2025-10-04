@@ -169,7 +169,7 @@
           col.className = 'col-lg-4 col-md-6 d-flex mb-4'; 
           col.innerHTML = `
               <div class="card w-100 h-100">
-                  <img src="${imageLink}" class="card-img-top img-fluid" alt="${escapeHtml(title)}" onerror="this.onerror=null;this.src='assets/Images/placeholder.png'">
+                  <img src="${imageLink}" class="card-img-top img-fluid" alt="${escapeHtml(title)}"onerror="this.onerror=null;this.src='assets/Images/placeholder.png'">
                   <div class="card-body text-center d-flex flex-column justify-content-end">
                       <a href="${link}" target="_blank" rel="noopener" class="btn btn-sm btn-primary mt-auto">View Original</a>
                   </div>

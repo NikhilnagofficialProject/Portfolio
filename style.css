@@ -305,8 +305,13 @@ body {
   border-radius: 12px;
   color: var(--text);
   font-weight: 600;
+  flex: 1 1 200px;
+  min-width: 150px;
   text-decoration: none;
+  text-align: center;
+  word-break: break-word;
   transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  min-height: 150px;
 }
 .contact-card i {
   font-size: 1.5rem;
