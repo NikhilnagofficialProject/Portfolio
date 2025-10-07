@@ -165,7 +165,6 @@
           const imageLink = transformDriveLinkToImage(link);
 
           const col = document.createElement('div');
-          // Added d-flex and h-100 for same height
           col.className = 'col-lg-4 col-md-6 d-flex mb-4'; 
           col.innerHTML = `
               <div class="card w-100 h-100">

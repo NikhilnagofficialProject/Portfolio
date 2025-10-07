@@ -238,7 +238,7 @@ body {
 .scroll-track {
   display: flex;
   white-space: nowrap;
-  animation: track-scroll 45s linear infinite; /* Adjust 45s for scroll speed */
+  animation: track-scroll 45s linear infinite;
   width: max-content;
 }
 
@@ -278,7 +278,7 @@ body {
 
 /* Highlight/Pop-up on Item Hover */
 .scroll-card:hover {
-  transform: scale(1.05) translateY(-5px); /* Lift and Pop-up */
+  transform: scale(1.05) translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
   border-color: var(--accent-color);
 }
@@ -289,7 +289,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Scrolls exactly half its width to loop seamlessly */
+    transform: translateX(-50%); 
   }
 }
 
