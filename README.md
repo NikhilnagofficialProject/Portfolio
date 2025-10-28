@@ -3,7 +3,7 @@
 Welcome to my personal portfolio project!  
 This site showcases my **skills, projects, achievements, certifications, and resume**, all in one place.  
 
-🔗 **Live Website:** [https://Nikhilnagofficial.github.io/portfolio](https://Nikhilnagofficial.github.io/portfolio)
+🔗 **Live Website:** [https://nikhilnagofficialproject.github.io/Portfolio/](https://nikhilnagofficialproject.github.io/Portfolio/)
 
 
 ## 🚀 Tech Stack
@@ -20,12 +20,13 @@ Frontend/
 ├─ css/ # Stylesheets
 ├─ js/ # Scripts (fetch from Google Sheets)
 └─ assets/ # Images, PDFs
-&
+
 Backend/ (local only, not published)
 ├─ portfolio.py # Upload files to Google Drive & update Google Sheets
 ├─ .env # API keys and folder IDs (ignored in Git)
 └─ uploads/ # Local files to sync (resume, projects, achievements, certifications)
-
+&
+└─ README
 
 ---
 
