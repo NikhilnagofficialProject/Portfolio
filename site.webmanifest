@@ -17,7 +17,12 @@
     },
     {
       "src": "assets/Images/Profile.jpg",
-      "sizes": "32x32",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/Images/Profile.jpg",
+      "sizes": "512x512",
       "type": "image/jpeg"
     }
   ]

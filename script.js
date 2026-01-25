@@ -84,7 +84,7 @@
   type();
 
   // ---------------- Navbar Scroll ----------------
-  const header = document.querySelector('.site-header'); 
+  const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
     if (header) {
       if (window.scrollY > 50) header.classList.add('scrolled');
@@ -107,14 +107,14 @@
       if (img) img.style.transform = '';
     });
   }
-  
-   // --- CUSTOM SCROLL LOGIC ---
+
+  // --- CUSTOM SCROLL LOGIC ---
   function initializeCustomScroll(id) {
     const track = document.getElementById(id);
     if (!track) return;
     const content = track.innerHTML;
     // Duplicate content for a seamless loop
-    track.innerHTML = content + content; 
+    track.innerHTML = content + content;
   }
 
   function renderCertifications(certifications) {
@@ -135,8 +135,8 @@
       const downloadLink = transformDriveLinkToDownload(link);
 
       const item = document.createElement('div');
-      item.className = 'scroll-card'; 
-       item.innerHTML = `
+      item.className = 'scroll-card';
+      item.innerHTML = `
         <h5 class="card-title">${escapeHtml(title).replace('.pdf', '')}</h5> 
         <p class="card-text muted small">${lastUpdated}</p>
         <div class="d-flex gap-2 mt-auto">
@@ -145,28 +145,28 @@
         </div>`;
       trackContent.appendChild(item);
     });
-  
+
     initializeCustomScroll('certifications-inner');
   }
 
   function renderAchievements(achievements) {
-      const grid = document.getElementById('achievements-list');
-      if (!grid) return;
+    const grid = document.getElementById('achievements-list');
+    if (!grid) return;
 
-      grid.innerHTML = '';
-      if (achievements.length === 0) {
-          grid.innerHTML = `<div class="col-12"><div class="card"><div class="alert alert-info">No achievements found.</div></div></div>`;
-          return;
-      }
+    grid.innerHTML = '';
+    if (achievements.length === 0) {
+      grid.innerHTML = `<div class="col-12"><div class="card"><div class="alert alert-info">No achievements found.</div></div></div>`;
+      return;
+    }
 
-      achievements.forEach(a => {
-          const title = a['filename'] || 'Untitled';
-          const link = a['link'] || '#';
-          const imageLink = transformDriveLinkToImage(link);
+    achievements.forEach(a => {
+      const title = a['filename'] || 'Untitled';
+      const link = a['link'] || '#';
+      const imageLink = transformDriveLinkToImage(link);
 
-          const col = document.createElement('div');
-          col.className = 'col-lg-4 col-md-6 d-flex mb-4'; 
-          col.innerHTML = `
+      const col = document.createElement('div');
+      col.className = 'col-lg-4 col-md-6 d-flex mb-4';
+      col.innerHTML = `
               <div class="card w-100 h-100">
                   <img src="${imageLink}" class="card-img-top img-fluid" alt="${escapeHtml(title)}"onerror="this.onerror=null;this.src='assets/Images/placeholder.png'">
                   <div class="card-body text-center d-flex flex-column justify-content-end">
@@ -174,10 +174,10 @@
                   </div>
               </div>
           `;
-          grid.appendChild(col);
-      });
+      grid.appendChild(col);
+    });
   }
-  
+
   function renderProjects(projects) {
     const grid = document.getElementById('projects-grid');
     if (!grid) return;
@@ -215,27 +215,27 @@
       if (m && m[1]) {
         return `https://drive.google.com/uc?export=download&id=${m[1]}`;
       }
-    } catch (e) {}
+    } catch (e) { }
     return link;
   }
-  
+
   function transformDriveLinkToImage(link) {
-  try {
-    const m = link.match(/\/d\/([^\/]+)/);
-    if (m && m[1]) {
-      return `https://drive.google.com/thumbnail?id=${m[1]}&sz=s640`; 
+    try {
+      const m = link.match(/\/d\/([^\/]+)/);
+      if (m && m[1]) {
+        return `https://drive.google.com/thumbnail?id=${m[1]}&sz=s640`;
+      }
+    } catch (e) {
+      console.error("Error transforming link:", e);
     }
-  } catch (e) {
-    console.error("Error transforming link:", e);
+    return 'assets/Images/placeholder.png';
   }
-  return 'assets/Images/placeholder.png'; 
-}
 
   function escapeHtml(s) {
     if (!s) return '';
-    return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    return s.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
   }
-  
+
   // ---------------- Scroll Reveal (Simplified) ----------------
   const reveals = document.querySelectorAll('.reveal');
   function checkReveal() {
@@ -248,4 +248,17 @@
   }
   checkReveal();
   window.addEventListener('scroll', checkReveal);
+
+  // ---------------- Service Worker Registration ----------------
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
 })();
