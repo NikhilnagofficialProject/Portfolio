@@ -1,0 +1,16 @@
+# Secrets and Config
+backend/client_secret*.json
+backend/token.pickle
+backend/.env
+config.js
+
+# Dependencies
+node_modules/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc

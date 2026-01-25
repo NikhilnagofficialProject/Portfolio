@@ -1,5 +1,5 @@
 (function () {
-  const sheetId = document.querySelector('meta[name="portfolio-sheet-id"]')?.content?.trim();
+  const sheetId = window.PORTFOLIO_CONFIG?.sheetId?.trim();
   const yearSpan = document.getElementById('year');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
