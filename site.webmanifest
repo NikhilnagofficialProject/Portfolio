@@ -2,8 +2,8 @@
   "name": "Portfolio",
   "short_name": "Portfolio",
   "description": "This is my portfolio website & resume to help other users + students.",
-  "id": "/",
-  "start_url": "/",
+  "id": "./",
+  "start_url": "./",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -11,12 +11,12 @@
   "background_color": "#ffffff",
   "icons": [
     {
-      "src": "/assets/Images/Profile-180x180.jpg",
+      "src": "assets/Images/Profile.jpg",
       "sizes": "180x180",
       "type": "image/jpeg"
     },
     {
-      "src": "/assets/Images/Profile-32x32.jpg",
+      "src": "assets/Images/Profile.jpg",
       "sizes": "32x32",
       "type": "image/jpeg"
     }
