@@ -30,7 +30,7 @@
       })
       .catch(err => console.warn("❌ Could not fetch sheet:", err));
   } else {
-    console.warn("⚠️ No sheet id provided in meta tag. Using placeholders.");
+    console.warn("⚠️ No sheet id provided in config.js. Using placeholders.");
   }
 
   function renderData(items) {
