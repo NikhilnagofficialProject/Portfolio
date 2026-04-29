@@ -24,9 +24,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check Secret
+        run: |
+          if [ -z "${{ secrets.PORTFOLIO_SHEET_ID }}" ]; then
+            echo "::warning::PORTFOLIO_SHEET_ID is missing or empty!"
+          else
+            echo "Secret is found."
+          fi
+
       - name: Create Config File
         run: |
-          echo "window.PORTFOLIO_CONFIG = { sheetId: '${{ secrets.PORTFOLIO_SHEET_ID }}' };" > config.js
+          printf "window.PORTFOLIO_CONFIG = { sheetId: '%s' };\n" "${{ secrets.PORTFOLIO_SHEET_ID }}" > config.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
