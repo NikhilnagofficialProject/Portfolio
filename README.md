@@ -58,5 +58,5 @@ Sensitive files are **excluded from GitHub** using `.gitignore`:
 
 ---
 
-© 2025 Nikhil Nag Gollapalli. All rights reserved.
+© 2026 Nikhil Nag Gollapalli. All rights reserved.
 
